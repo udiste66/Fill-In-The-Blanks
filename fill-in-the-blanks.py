@@ -6,12 +6,14 @@ answers1 = ['omelette', 'eggs', 'fried', 'pan']
 answers2 = ['soup', 'stock', 'clarified', 'egg']
 answers3 = ['French', '19th', 'blood', 'elegance']
 
-#Intro
+# Intro
 print '''Howdy Pardner! Let's play a game!'''
 
-#The level() function will prompt a user to select a difficulty level between easy, medium and hard.
-#Each choise will result in the function returning the corresponding set of paragraph and answer list, as well as printing some feedback on choice.
-#If the user fails to select one of the 3 levels, even though we've tried to account for capitalisation mistakes, the function will run again from the top.
+# The level() function will prompt a user to select a difficulty level between
+# easy, medium and hard. Each choice will result in the function returning the
+# corresponding set of paragraph and answer list, as well as printing some feedback
+# on choice. If the user fails to select one of the 3 levels, even though we've
+# tried to account for capitalisation mistakes, the function will run again from the top.
 def level():
 	level_choice=raw_input('Choose a difficulty level between easy, medium and hard...  ') 
 	level_choice_feedback='''You have selected the difficulty level ''' + str(level_choice.lower()) + ''' try to solve the paragraph here below!'''
@@ -30,9 +32,13 @@ def level():
 		return level()
 
 
-#The quiz() function is the actual game, it only takes 1 input as both the paragraph and the answer list are inputs of the level() function, which we're calling inside this one. 
-#The loop goes through the blanks[i] and checks if the corresponding answer matches by seeing if it equals to answer[i], if it doesn't we ask the user to try again.
-#We're also counting guesses, every wrong geuss will increase this value by 1, once wronf guesses have been made the loop doesn't start due to the condition while guesses<=10 we've set. 
+# The quiz() function is the actual game, it only takes 1 input as both the paragraph
+# and the answer list are inputs of the level() function, which we're calling 
+# inside this one. The loop goes through the blanks[i] and checks if the corresponding 
+# answer matches by seeing if it equals to answer[i], if it doesn't we ask the 
+# user to try again. We're also counting guesses, every wrong geuss will increase 
+# this value by 1, once too many wrong guesses have been made the loop doesn't 
+# start due to the condition ''while guesses<=10'' we've set. 
 def quiz(blank):
 	i=0
 	guesses=0
@@ -55,5 +61,5 @@ def quiz(blank):
 
 quiz(blanks)     
 
-#Game Over
+# Game Over
 print "Thanks for playing!"
