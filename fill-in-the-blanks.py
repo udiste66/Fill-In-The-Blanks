@@ -55,7 +55,8 @@ def quiz(blank):
 			print 'Try again!'
 			guesses=guesses+1
 	else:
-		print 'Too many wrong guesses mate...'
+		if guesses>=10:
+			print 'Too many wrong guesses mate...'
 
 quiz(blanks)     
 
